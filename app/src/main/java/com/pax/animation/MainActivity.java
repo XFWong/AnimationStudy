@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //        intValueAnimation();
-        Button button = (Button)findViewById(R.id.button_animation);
-        initAnimationByXml(button);
+//        Button button = (Button)findViewById(R.id.button_animation);
+//        initAnimationByXml(button);
     }
 
     private void intValueAnimation() {
