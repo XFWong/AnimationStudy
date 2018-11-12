@@ -18,8 +18,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //        intValueAnimation();
-//        Button button = (Button)findViewById(R.id.button_animation);
+        Button button = (Button)findViewById(R.id.button_animation);
 //        initAnimationByXml(button);
+        initObjectAmationByXml(button);
     }
 
     private void intValueAnimation() {
@@ -56,4 +57,12 @@ public class MainActivity extends AppCompatActivity {
         valueAnimator.start();
 
     }
+
+    private void initObjectAmationByXml(Button button){
+        Animator animator = AnimatorInflater.loadAnimator(MainActivity.this, R.animator.view_animation);
+        animator.setTarget(button);
+        animator.start();
+    }
+
+
 }
