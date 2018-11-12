@@ -2,6 +2,7 @@ package com.pax.animation;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
+import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -20,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
 //        intValueAnimation();
         Button button = (Button)findViewById(R.id.button_animation);
 //        initAnimationByXml(button);
-        initObjectAmationByXml(button);
+//        initObjectAmationByXml(button);
+        initObjectAmationByCode(button);
     }
 
     private void intValueAnimation() {
@@ -64,5 +66,10 @@ public class MainActivity extends AppCompatActivity {
         animator.start();
     }
 
-
+    private void initObjectAmationByCode(Button button){
+        ObjectAnimator animator = ObjectAnimator.ofFloat(button, "alpha",
+                1f, 0f, 1f);
+        animator.setDuration(5000);
+        animator.start();
+    }
 }
