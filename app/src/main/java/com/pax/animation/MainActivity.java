@@ -19,10 +19,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //        intValueAnimation();
-        Button button = (Button)findViewById(R.id.button_animation);
+//        Button button = (Button)findViewById(R.id.button_animation);
 //        initAnimationByXml(button);
 //        initObjectAmationByXml(button);
-        initObjectAmationByCode(button);
+//        initObjectAmationByCode(button);
+
+        MyView2 myView2;
+        myView2 = (MyView2) findViewById(R.id.MyView2);
+        ObjectAnimator anim = ObjectAnimator.ofObject(myView2, "color",
+                new ColorEvaluator(), "#0000FF", "#FF0000");
+        anim.setDuration(8000);
+        anim.start();
     }
 
     private void intValueAnimation() {
@@ -67,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initObjectAmationByCode(Button button){
-        ObjectAnimator animator = ObjectAnimator.ofFloat(button, "alpha",
-                1f, 0f, 1f);
+        ObjectAnimator animator = ObjectAnimator.ofFloat(button, "Rotation",
+                1f, 180f, 1f);
         animator.setDuration(5000);
         animator.start();
     }
